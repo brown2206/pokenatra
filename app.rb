@@ -39,3 +39,9 @@ get '/pokemon/:id' do
   @pokemon = Pokemon.find(params[:id])
   erb :"pokemon/show"
 end
+
+delete "/pokemon/:id" do
+  @pokemon = Pokemon.find(params[:id])
+  @pokemon.destroy
+  redirect("/pokemon")
+end
