@@ -3,6 +3,9 @@ require 'ffaker'
 require 'pg'
 require_relative 'connection'
 require_relative '../models/pokemon'
+require_relative '../models/trainer'
+require_relative '../models/team'
+
 
 Pokemon.destroy_all
 Pokemon.create(name: "Charmander", cp: rand(800), poke_type: "fire", img_url: "https://img.pokemondb.net/artwork/charmander.jpg")
@@ -13,3 +16,15 @@ Pokemon.create(name: "Clefairy", cp: rand(800), poke_type: "fairy", img_url: "ht
 Pokemon.create(name: "Nidoking", cp: rand(800), poke_type: "poison ground", img_url: "https://img.pokemondb.net/artwork/nidoking.jpg")
 Pokemon.create(name: "Gengar", cp: rand(800), poke_type: "ghost poison", img_url: "https://img.pokemondb.net/artwork/gengar.jpg")
 Pokemon.create(name: "Blastoise", cp: rand(800), poke_type: "water", img_url: "https://img.pokemondb.net/artwork/blastoise.jpg")
+
+Trainer.destroy_all
+Trainer.create(name: "Angelo", level: rand(100), img_url: "https://img.pokemondb.net/artwork/blastoise.jpg")
+Trainer.create(name: "Spreewell", level: rand(100), img_url: "https://img.pokemondb.net/artwork/nidoking.jpg")
+Trainer.create(name: "Mike Tyson", level: rand(100), img_url: "https://img.pokemondb.net/artwork/clefairy.jpg")
+Trainer.create(name: "Rocky", level: rand(100), img_url: "https://img.pokemondb.net/artwork/nidoking.jpg")
+Trainer.create(name: "Martin Luther King Jr", level: rand(100), img_url: "https://img.pokemondb.net/artwork/clefairy.jpg")
+
+Team.destroy_all
+Team.create(name: "Blue")
+Team.create(name: "Red")
+Team.create(name: "Yellow")

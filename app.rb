@@ -1,14 +1,11 @@
-require 'pry'
+require 'sinatra'
+require 'sinatra/reloader'
 require 'active_record'
 
-## Connect to the database
+# Load the file to connect to the DB
 require_relative 'db/connection'
 
 # Load models
 require_relative 'models/pokemon'
-require_relative 'models/trainer'
 require_relative 'models/team'
-
-binding.pry
-
-puts "this line fixes binding.pry bug"
+require_relative 'models/trainer'
