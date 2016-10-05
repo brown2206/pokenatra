@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'active_record'
+require 'pry'
 
 # Load the file to connect to the DB
 require_relative 'db/connection'
@@ -44,4 +45,14 @@ delete "/pokemon/:id" do
   @pokemon = Pokemon.find(params[:id])
   @pokemon.destroy
   redirect("/pokemon")
+end
+
+get '/team' do
+  @team = Team.all
+  erb :"team/index"
+end
+
+get '/team/:name' do
+  @team = Team.find_by(name: params[:name].capitalize)
+  erb :"team/show"
 end
